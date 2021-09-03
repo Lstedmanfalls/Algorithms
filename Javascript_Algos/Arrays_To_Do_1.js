@@ -136,3 +136,4 @@ function arr6(arr){
     return arr
 }
 console.log(arr6(["Alex", "Alex", "Bart", "Champ","Champ", "Duke"]))
+// Can't figure out how to do this one
