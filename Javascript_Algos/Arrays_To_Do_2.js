@@ -32,29 +32,27 @@ function arr2(arr, offset){
 console.log(arr2([1,2,3,4],1))
 // Can only get it to work when it's rotated by 1, can't figure out how to rotate it by more than 1
 
-
-
 // Alan is good at breaking secret codes. One method is to eliminate values that lie outside of a specific known range. Given arr and values min and max, retain only the array values between min and max. Work in-place: return the array you are given, with values in original order. No built-in array functions.
 
-// Strategy:
-// 1) Remove values from end
-// 2) move values left until arr[0] = arr[start]
-
-function arr3(arr, start, end){
-    value = arr[start]
-    for (var i = arr[start]; i < arr[end+1]; i++){
-        arr.pop()
-    }
-    // end popped off --> [ 4, 5, 0, 1, 2, 3 ]
-    for (var j = arr.length-1; j > 0; j--){
-        temp = arr[j];
-        arr[j] = arr[arr.length-1];
-        arr[arr.length-1] = temp;
-    }
-    return arr
-}
-console.log(arr3([4,5,0,1,2,3,6,7],3,5))
-//Can't figure out how to get it to take off everything before the start. Tried to swap the end to the beginning, but can't figure that out. Not sure if there's a better way?
+// function arr3(arr, min, max){
+//     //     Loop through the array
+//     for (var i = 0; i < arr.length; i++){
+//     //     If the value is NOT between min and max:
+//         if (arr[i] <= min || arr[i] >= max){
+//             // move all values after current index to the left (-1) by looping  
+//             // To move each value that is out of range to the end to be chopped off
+//             for (j = i+1; j < arr.length; j++){
+//                 arr[j-1] = arr[j];
+//             }
+//             // Chop off the bad values
+//             arr.pop()
+//             i--
+//         } 
+//         // If it is within the range, move onto the next index
+//     }
+//     return arr
+// }
+// console.log(arr3([4,5,0,1,2,3,6,7],2,5))
 
 
 // Replicate JavaScript's concat(). Create a standalone function that accepts two arrays. Return a new array containing the first array's elements, followed by the second array's elements. Do not alter the original arrays. Ex.: arrConcat( ['a','b'], [1,2] ) should return new array ['a','b',1,2].
