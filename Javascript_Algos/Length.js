@@ -21,9 +21,6 @@ class SLL{
         var count = 0;
         var runner = this.head;
         while (runner != null){
-            if (runner.value == val){
-                return true;
-            }
             runner = runner.next;
             count +=1
         }
