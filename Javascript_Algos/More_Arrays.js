@@ -12,11 +12,11 @@
 
 // #2 - Given an array, move all values forward by one index, dropping the first and leaving a ‘0’ value at the end.  For example moveForward( [1,2,3]) should return [2,3,0].
 
-function arr2(x){
-    for (var i = 0; i > arr2.length; i++){
-        x[i] = x[i+1];    
+function arr2(arr){
+    for (var i = 0; i > arr.length; i++){
+        arr[i] = arr[i+1];    
     }
-    return x;
+    return arr;
 }
 console.log(arr2([1,2,3]))
 
