@@ -13,13 +13,13 @@ const partition = (arr, i, j) => {
     const pivot = arr[Math.floor(Math.random() * (j - i + 1) + i)] // Set the pivot (point of dividing high and low). It's most efficient to make the pivot idx be random
     while (i <= j) { // while i has not yet reached j
         while (arr[i] < pivot) { // while the value at the start pointer is less than the pivot value
-            i++ // move onto the next index for i (is in correct order)
+            i++ // move onto the next index for i (is in correct order) until i is not less than pivot
         }
         while (arr[j] > pivot) { // while the value at the end pointer is greater than the pivot value
-            j-- // move onto the next index for j (is in correct order)
+            j-- // move onto the next index for j (is in correct order) until j is not greater than pivot
         }
-        if (i <= j) { // if we get stuck (the low end pointer has reached j or j has exceeded i)
-            swap(arr, i, j) // swap becuase that means the higher value is on the left and should be on the right
+        if (i <= j) { // if the left value is greater than the pivot, and the right value is less than the pivot (they're on the wrong side), switch them
+            swap(arr, i, j)
             i++ //move onto the next index for i
             j-- //move onto the next index for j
         }
