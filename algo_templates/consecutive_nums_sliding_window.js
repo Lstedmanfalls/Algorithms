@@ -5,12 +5,12 @@ const slidingWindow = (arr, n) => {
     let tempSum = 0;
     if (arr.length < n) return null;
     for (let i = 0; i < n; i++) {
-        maxSum += arr[i]; 
+        maxSum += arr[i]; //hold the sum of the first n values in a variable
     }
-    tempSum = maxSum;
+    tempSum = maxSum; //to start out, we're holding the first sum in temp
     for (let i = n; i < arr.length; i++){
-        tempSum = tempSum - arr[i - n] + arr[i];
-        maxSum = Math.max(maxSum, tempSum) //maxSum will equal the greater of either maxSum or tempSum
+        tempSum = (tempSum - arr[i - n]) + arr[i]; //substract the first number in the range, then add the next number in the range
+        maxSum = Math.max(maxSum, tempSum) //maxSum will equal the greater of either maxSum or tempSum, update / store the greatest sum
     }
     return maxSum
 }
