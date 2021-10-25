@@ -1,6 +1,6 @@
 // Given a sorted array of integers, find the first pair that sums to zero. Return an array with the first pair' values. Return undefined if no pair.
 
-function sumZero(arr){
+const sumZero = (arr) => {
     if (arr.length < 2){
         return "Array must contain at least two elements"
     }

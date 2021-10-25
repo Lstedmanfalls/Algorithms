@@ -1,5 +1,5 @@
-function six_mults(start, end, mult){
-    var num = start;
+const six_mults = (start, end, mult) => {
+    let num = start;
     while (num <= end){
         if(num % mult == 0)
         console.log(num);

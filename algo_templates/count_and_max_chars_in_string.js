@@ -1,8 +1,8 @@
 // Given a string, count the number of times each character appears in the string. Characters are alphanumeric (A-Z and 0-9), and case doesn't matter (lowercase h == uppercase H)
 
-function charCount(str){
-    var obj = {}; // Initiate empty object
-    for (var char of str){ // For each element in a string, shorthand for loop
+const charCount = (str) => {
+    const obj = {}; // Initiate empty object
+    for (let char of str){ // For each element in a string, shorthand for loop
         if (isAlphaNumeric(char)) { // If the result of the below function is true
             char = char.toLowerCase(); // Make the character lowercase
             obj[char] = ++obj[char] || 1; // If the key is in the object already, add 1 to its value, if it's not in the object, add the key to the object and make it's value 1
@@ -18,8 +18,8 @@ function charCount(str){
 }
 
 // This is a validation to only count letters and numbers in the string (not spaces or punctuation)
-function isAlphaNumeric(char){
-    var code = char.charCodeAt(0);
+const isAlphaNumeric = (char) => {
+    const code = char.charCodeAt(0);
     if (!(code > 47 && code < 58) && // These are ASCII codes for 0-9
     !(code > 64 && code < 91) && // These are ASCII codes for A-Z
     !(code > 96 && code < 123)){ // These are ASCII codes for a-z
@@ -29,10 +29,10 @@ function isAlphaNumeric(char){
 }
 
 // This finds which letter occurs most in the string (key with the highest value). Returns the letter and how many times it occurs
-function maxChar(){
+const maxChar = () => {
         let arr = Object.values(sorted);
-        var max = Math.max(...arr);
-        var char = Object.keys(sorted).reduce((a, b) => sorted[a] > sorted[b] ? a : b);
+        let max = Math.max(...arr);
+        let char = Object.keys(sorted).reduce((a, b) => sorted[a] > sorted[b] ? a : b);
         return char + " " + "is the max, and it occurs " + max + " times"
 }
 
