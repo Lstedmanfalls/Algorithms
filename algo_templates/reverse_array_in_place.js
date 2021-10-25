@@ -4,14 +4,14 @@
 // 1) Swap the first and last values on first loop
 // 2) Move the last value -1 for each loop
 
-function arr1(arr){
-    var x = (arr.length -1)
-    for (var i = 0; i <= x; i++){
-        temp = arr[i];
-        arr[i] = arr[x]
-        arr[x] = temp;
-        x--
+const reverseArr = (arr) => {
+    let end = (arr.length -1)
+    for (let i = 0; i <= end; i++){
+        let temp = arr[i];
+        arr[i] = arr[end]
+        arr[end] = temp;
+        end--
     }
     return arr;
 }
-console.log(arr1([5,4,3,2,1,0]))
+console.log(reverseArr([5,4,3,2,1,0]))
