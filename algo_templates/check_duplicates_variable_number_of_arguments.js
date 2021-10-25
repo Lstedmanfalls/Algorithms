@@ -1,4 +1,4 @@
-function areThereDuplicates(...nums) {
+const areThereDuplicates = (...nums) => {
     const allNums = nums;
     const obj = {};
     if (allNums.length > 1){
@@ -12,6 +12,6 @@ function areThereDuplicates(...nums) {
     return false;
 }
 
-console.log(areThereDuplicates(1,2,2,4))
-console.log(areThereDuplicates(0))
-console.log(areThereDuplicates(0,0))
+console.log(areThereDuplicates(1,2,2,4)) //true
+console.log(areThereDuplicates(0)) //false
+console.log(areThereDuplicates(0,0)) //true
